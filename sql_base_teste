@@ -1,0 +1,460 @@
+-- Step                : popular_dim_calendario
+-- Database Connection : postgres
+-- SQL                  : ALTER TABLE "public".dim_calendario ADD COLUMN Mes_KTL SMALLINT;
+
+UPDATE "public".dim_calendario SET Mes_KTL=Mes;
+
+ALTER TABLE "public".dim_calendario DROP COLUMN Mes;
+
+ALTER TABLE "public".dim_calendario RENAME Mes_KTL TO Mes;
+
+
+
+;
+
+ALTER TABLE "public".dim_calendario ADD COLUMN Ano_KTL SMALLINT;
+
+UPDATE "public".dim_calendario SET Ano_KTL=Ano;
+
+ALTER TABLE "public".dim_calendario DROP COLUMN Ano;
+
+ALTER TABLE "public".dim_calendario RENAME Ano_KTL TO Ano;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_dim_linha_produto
+-- Database Connection : postgres
+-- SQL                  : ALTER TABLE "public".dim_linha_produto ADD COLUMN id_KTL BIGINT;
+
+UPDATE "public".dim_linha_produto SET id_KTL=id;
+
+ALTER TABLE "public".dim_linha_produto DROP COLUMN id;
+
+ALTER TABLE "public".dim_linha_produto RENAME id_KTL TO id;
+
+
+
+;
+
+ALTER TABLE "public".dim_linha_produto ADD COLUMN nome_KTL VARCHAR(18);
+
+UPDATE "public".dim_linha_produto SET nome_KTL=nome;
+
+ALTER TABLE "public".dim_linha_produto DROP COLUMN nome;
+
+ALTER TABLE "public".dim_linha_produto RENAME nome_KTL TO nome;
+
+
+
+;
+
+ALTER TABLE "public".dim_linha_produto ADD COLUMN marca_KTL VARCHAR(13);
+
+UPDATE "public".dim_linha_produto SET marca_KTL=marca;
+
+ALTER TABLE "public".dim_linha_produto DROP COLUMN marca;
+
+ALTER TABLE "public".dim_linha_produto RENAME marca_KTL TO marca;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_dim_pdv
+-- Database Connection : postgres
+-- SQL                  : ALTER TABLE "public".dim_pdv ADD COLUMN id_KTL BIGINT;
+
+UPDATE "public".dim_pdv SET id_KTL=id;
+
+ALTER TABLE "public".dim_pdv DROP COLUMN id;
+
+ALTER TABLE "public".dim_pdv RENAME id_KTL TO id;
+
+
+
+;
+
+ALTER TABLE "public".dim_pdv ADD COLUMN nome_KTL VARCHAR(14);
+
+UPDATE "public".dim_pdv SET nome_KTL=nome;
+
+ALTER TABLE "public".dim_pdv DROP COLUMN nome;
+
+ALTER TABLE "public".dim_pdv RENAME nome_KTL TO nome;
+
+
+
+;
+
+ALTER TABLE "public".dim_pdv ADD COLUMN perfil_KTL VARCHAR(9);
+
+UPDATE "public".dim_pdv SET perfil_KTL=perfil;
+
+ALTER TABLE "public".dim_pdv DROP COLUMN perfil;
+
+ALTER TABLE "public".dim_pdv RENAME perfil_KTL TO perfil;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_ft_disponibilidade
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE "public".ft_disponibilidade ADD COLUMN quantidade_presencas_KTL BIGINT;
+
+UPDATE "public".ft_disponibilidade SET quantidade_presencas_KTL=quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade DROP COLUMN quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade RENAME quantidade_presencas_KTL TO quantidade_presencas;
+
+
+
+;
+
+ALTER TABLE "public".ft_disponibilidade ADD COLUMN chave_KTL TEXT;
+
+UPDATE "public".ft_disponibilidade SET chave_KTL=chave;
+
+ALTER TABLE "public".ft_disponibilidade DROP COLUMN chave;
+
+ALTER TABLE "public".ft_disponibilidade RENAME chave_KTL TO chave;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_ft_disponibilidade_agregada
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE "public".ft_disponibilidade_agregada ADD COLUMN quantidade_presencas_KTL BIGINT;
+
+UPDATE "public".ft_disponibilidade_agregada SET quantidade_presencas_KTL=quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade_agregada DROP COLUMN quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade_agregada RENAME quantidade_presencas_KTL TO quantidade_presencas;
+
+
+
+;
+
+ALTER TABLE "public".ft_disponibilidade_agregada ADD COLUMN chave_KTL TEXT;
+
+UPDATE "public".ft_disponibilidade_agregada SET chave_KTL=chave;
+
+ALTER TABLE "public".ft_disponibilidade_agregada DROP COLUMN chave;
+
+ALTER TABLE "public".ft_disponibilidade_agregada RENAME chave_KTL TO chave;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : tb_ods
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE ods.dataset ADD COLUMN ID_DATASET_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_DATASET_KTL=ID_DATASET;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_DATASET;
+
+ALTER TABLE ods.dataset RENAME ID_DATASET_KTL TO ID_DATASET;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN ID_PONTO_VENDA_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_PONTO_VENDA_KTL=ID_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME ID_PONTO_VENDA_KTL TO ID_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN NOME_PONTO_VENDA_KTL VARCHAR(14);
+
+UPDATE ods.dataset SET NOME_PONTO_VENDA_KTL=NOME_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN NOME_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME NOME_PONTO_VENDA_KTL TO NOME_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN PERFIL_PONTO_VENDA_KTL VARCHAR(9);
+
+UPDATE ods.dataset SET PERFIL_PONTO_VENDA_KTL=PERFIL_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN PERFIL_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME PERFIL_PONTO_VENDA_KTL TO PERFIL_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN ID_LINHA_PRODUTO_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_LINHA_PRODUTO_KTL=ID_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME ID_LINHA_PRODUTO_KTL TO ID_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN NOME_LINHA_PRODUTO_KTL VARCHAR(18);
+
+UPDATE ods.dataset SET NOME_LINHA_PRODUTO_KTL=NOME_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN NOME_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME NOME_LINHA_PRODUTO_KTL TO NOME_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN MARCA_LINHA_PRODUTO_KTL VARCHAR(13);
+
+UPDATE ods.dataset SET MARCA_LINHA_PRODUTO_KTL=MARCA_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN MARCA_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME MARCA_LINHA_PRODUTO_KTL TO MARCA_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN TIPO_COLETA_KTL VARCHAR(15);
+
+UPDATE ods.dataset SET TIPO_COLETA_KTL=TIPO_COLETA;
+
+ALTER TABLE ods.dataset DROP COLUMN TIPO_COLETA;
+
+ALTER TABLE ods.dataset RENAME TIPO_COLETA_KTL TO TIPO_COLETA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN VALOR_KTL VARCHAR(3);
+
+UPDATE ods.dataset SET VALOR_KTL=VALOR;
+
+ALTER TABLE ods.dataset DROP COLUMN VALOR;
+
+ALTER TABLE ods.dataset RENAME VALOR_KTL TO VALOR;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_ft_disponibilidade
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE "public".ft_disponibilidade ADD COLUMN quantidade_presencas_KTL BIGINT;
+
+UPDATE "public".ft_disponibilidade SET quantidade_presencas_KTL=quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade DROP COLUMN quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade RENAME quantidade_presencas_KTL TO quantidade_presencas;
+
+
+
+;
+
+ALTER TABLE "public".ft_disponibilidade ADD COLUMN chave_KTL TEXT;
+
+UPDATE "public".ft_disponibilidade SET chave_KTL=chave;
+
+ALTER TABLE "public".ft_disponibilidade DROP COLUMN chave;
+
+ALTER TABLE "public".ft_disponibilidade RENAME chave_KTL TO chave;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : popular_ft_disponibilidade_agregada
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE "public".ft_disponibilidade_agregada ADD COLUMN quantidade_presencas_KTL BIGINT;
+
+UPDATE "public".ft_disponibilidade_agregada SET quantidade_presencas_KTL=quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade_agregada DROP COLUMN quantidade_presencas;
+
+ALTER TABLE "public".ft_disponibilidade_agregada RENAME quantidade_presencas_KTL TO quantidade_presencas;
+
+
+
+;
+
+ALTER TABLE "public".ft_disponibilidade_agregada ADD COLUMN chave_KTL TEXT;
+
+UPDATE "public".ft_disponibilidade_agregada SET chave_KTL=chave;
+
+ALTER TABLE "public".ft_disponibilidade_agregada DROP COLUMN chave;
+
+ALTER TABLE "public".ft_disponibilidade_agregada RENAME chave_KTL TO chave;
+
+
+
+;
+
+
+
+-------------------------------------------------------------------------------------------
+
+-- Step                : tb_ods
+-- Database Connection : postgresql
+-- SQL                  : ALTER TABLE ods.dataset ADD COLUMN ID_DATASET_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_DATASET_KTL=ID_DATASET;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_DATASET;
+
+ALTER TABLE ods.dataset RENAME ID_DATASET_KTL TO ID_DATASET;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN ID_PONTO_VENDA_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_PONTO_VENDA_KTL=ID_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME ID_PONTO_VENDA_KTL TO ID_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN NOME_PONTO_VENDA_KTL VARCHAR(14);
+
+UPDATE ods.dataset SET NOME_PONTO_VENDA_KTL=NOME_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN NOME_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME NOME_PONTO_VENDA_KTL TO NOME_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN PERFIL_PONTO_VENDA_KTL VARCHAR(9);
+
+UPDATE ods.dataset SET PERFIL_PONTO_VENDA_KTL=PERFIL_PONTO_VENDA;
+
+ALTER TABLE ods.dataset DROP COLUMN PERFIL_PONTO_VENDA;
+
+ALTER TABLE ods.dataset RENAME PERFIL_PONTO_VENDA_KTL TO PERFIL_PONTO_VENDA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN ID_LINHA_PRODUTO_KTL BIGINT;
+
+UPDATE ods.dataset SET ID_LINHA_PRODUTO_KTL=ID_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN ID_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME ID_LINHA_PRODUTO_KTL TO ID_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN NOME_LINHA_PRODUTO_KTL VARCHAR(18);
+
+UPDATE ods.dataset SET NOME_LINHA_PRODUTO_KTL=NOME_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN NOME_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME NOME_LINHA_PRODUTO_KTL TO NOME_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN MARCA_LINHA_PRODUTO_KTL VARCHAR(13);
+
+UPDATE ods.dataset SET MARCA_LINHA_PRODUTO_KTL=MARCA_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset DROP COLUMN MARCA_LINHA_PRODUTO;
+
+ALTER TABLE ods.dataset RENAME MARCA_LINHA_PRODUTO_KTL TO MARCA_LINHA_PRODUTO;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN TIPO_COLETA_KTL VARCHAR(15);
+
+UPDATE ods.dataset SET TIPO_COLETA_KTL=TIPO_COLETA;
+
+ALTER TABLE ods.dataset DROP COLUMN TIPO_COLETA;
+
+ALTER TABLE ods.dataset RENAME TIPO_COLETA_KTL TO TIPO_COLETA;
+
+
+
+;
+
+ALTER TABLE ods.dataset ADD COLUMN VALOR_KTL VARCHAR(3);
+
+UPDATE ods.dataset SET VALOR_KTL=VALOR;
+
+ALTER TABLE ods.dataset DROP COLUMN VALOR;
+
+ALTER TABLE ods.dataset RENAME VALOR_KTL TO VALOR;
+
+
+
+;
+
+
+
